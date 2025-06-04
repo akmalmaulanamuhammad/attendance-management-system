@@ -1,0 +1,57 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Set base directory
+RewriteBase /backend/
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect config and utils directories
+RewriteRule ^(config|utils|database)/ - [F,L]
+
+# Block access to .htaccess
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Block access to sensitive files
+<FilesMatch "^(config\.php|database\.php|schema\.sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Handle CORS preflight requests
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+
+# Set CORS headers for all requests
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+
+# Protect uploaded files
+<Directory "uploads">
+    Order Deny,Allow
+    Deny from all
+    <FilesMatch "\.(jpg|jpeg|png)$">
+        Allow from all
+    </FilesMatch>
+</Directory>
+
+# PHP error handling
+php_flag display_errors off
+php_value error_reporting E_ALL
+php_value error_log logs/error.log
+
+# Set maximum file upload size
+php_value upload_max_filesize 5M
+php_value post_max_size 6M
+
+# Security headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"
+Header set Referrer-Policy "same-origin"
+Header set Content-Security-Policy "default-src 'self'"
