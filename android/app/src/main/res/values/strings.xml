@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Attendance App</string>
+    
+    <!-- Login Screen -->
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="invalid_credentials">Invalid username or password</string>
+    <string name="app_logo">App Logo</string>
+    
+    <!-- Attendance Screen -->
+    <string name="attendance">Attendance</string>
+    <string name="tap_to_capture">Tap to capture photo</string>
+    <string name="attendance_photo">Attendance Photo</string>
+    <string name="location">Location</string>
+    <string name="fetching_location">Fetching location…</string>
+    <string name="submit_attendance">Submit Attendance</string>
+    <string name="attendance_history">Attendance History</string>
+    <string name="location_format">Latitude: %1$.6f, Longitude: %2$.6f</string>
+    <string name="location_within_office">You are within office premises</string>
+    <string name="location_outside_office">You are %1$d meters away from office</string>
+    
+    <!-- History Screen -->
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="no_attendance_records">No attendance records found</string>
+    <string name="filter">Filter</string>
+    
+    <!-- Status -->
+    <string name="status_present">Present</string>
+    <string name="status_late">Late</string>
+    <string name="status_invalid_location">Invalid Location</string>
+    
+    <!-- Permissions -->
+    <string name="permission_camera_rationale">Camera permission is needed to capture attendance photo</string>
+    <string name="permission_location_rationale">Location permission is needed to verify your attendance location</string>
+    <string name="permission_denied_explanation">Permission was denied, but is needed for core functionality</string>
+    <string name="settings">Settings</string>
+    
+    <!-- Error Messages -->
+    <string name="error_network">Network error occurred</string>
+    <string name="error_server">Server error occurred</string>
+    <string name="error_camera">Failed to capture photo</string>
+    <string name="error_location">Failed to get location</string>
+    <string name="error_unknown">An unknown error occurred</string>
+    
+    <!-- Success Messages -->
+    <string name="success_attendance">Attendance recorded successfully</string>
+    
+    <!-- Dialog Messages -->
+    <string name="dialog_loading">Please wait…</string>
+    <string name="dialog_error">Error</string>
+    <string name="dialog_success">Success</string>
+    <string name="dialog_confirm">Confirm</string>
+    <string name="dialog_cancel">Cancel</string>
+    
+    <!-- Date Format -->
+    <string name="date_format">dd MMM yyyy</string>
+    <string name="time_format">hh:mm a</string>
+</resources>
